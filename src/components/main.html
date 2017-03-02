@@ -1,0 +1,66 @@
+<div class="header">
+    <h1>{{title}}</h1>
+</div>
+<style>
+    .button-secondary {
+        color: white;
+        border-radius: 4px;
+        text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        background: rgb(66, 184, 221);
+    }
+</style>
+
+<form class="pure-form pure-form-aligned">
+    <fieldset>
+        <div class="pure-controls">
+        <button class="button-secondary pure-button">⏸️ Pause</button>
+        </div>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Song settings</legend>
+        <div class="pure-control-group">
+            <label for="interval">Song interval</label>
+            <input id="interval" type="number" defaultValue="5" min="0" max="100" bind:value="interval">
+            <span class="pure-form-message-inline">Minutes between each song</span>
+        </div>
+
+        <div class="pure-control-group">
+            <label for="interval">Folder name</label>
+            <input id="interval" type="text" defaultValue="5" min="0" max="100" bind:value="folder">
+            <span class="pure-form-message-inline">Folder to play MP3s from</span>
+        </div>
+
+        <div class="pure-control-group">
+            <label for="sort">Sort</label>
+            <select id="sort" bind:value="sort">
+                <option>alphabetic</option>
+                <option>random</option>
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Environmental settings</legend>
+        <div class="pure-control-group">
+            <label for="interval">Latitude</label>
+            <input id="interval" type="text" bind:value="latitude">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="interval">Longitude</label>
+            <input id="interval" type="text" bind:value="longitude">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="cycle">Cycle</label>
+            <select id="cycle" bind:value="cycle">
+                <option>diurnal</option>
+                <option>nocturnal</option>
+                <option>crepuscular</option>
+                <option>cathemeral</option>
+            </select>
+        </div>
+    </fieldset>
+
+</form>
