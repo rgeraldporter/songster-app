@@ -1,10 +1,14 @@
+// rollup.config.js
+import * as fs from 'fs';
 import svelte from 'rollup-plugin-svelte';
 
 export default {
-    entry: 'src/js/main.js',
-    dest: 'public/js/main.min.js',
-    format: 'iife',
-    plugins: [
-        svelte()
-    ]
-};
+  input: 'src/js/main.js',
+  output: {
+    file: 'public/js/main.min.js',
+    format: 'iife'
+  },
+  plugins: [
+    svelte()
+  ]
+}

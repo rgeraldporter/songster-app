@@ -13,7 +13,8 @@
 <form class="pure-form pure-form-aligned">
     <fieldset>
         <div class="pure-controls">
-        <button class="button-secondary pure-button">⏸️ Pause</button>
+        <button type="button" hidden="{{pause}}" on:click="set({ pause: true })" class="button-secondary pure-button">⏸️ Pause</button>
+        <button type="button" hidden="{{!pause}}" on:click="set({ pause: false })" class="button-secondary pure-button">▶️ Play</button>
         </div>
     </fieldset>
     
@@ -21,7 +22,7 @@
         <legend>Song settings</legend>
         <div class="pure-control-group">
             <label for="interval">Song interval</label>
-            <input id="interval" type="number" defaultValue="5" min="0" max="100" bind:value="interval">
+            <input id="interval" type="number" defaultValue="0.2" min="0.2" max="100" bind:value="interval">
             <span class="pure-form-message-inline">Minutes between each song</span>
         </div>
 
@@ -45,6 +46,7 @@
         <div class="pure-control-group">
             <label for="interval">Latitude</label>
             <input id="interval" type="text" bind:value="latitude">
+            <span class="pure-form-message-inline">Used to determine daylight cycle times</span>
         </div>
 
         <div class="pure-control-group">
@@ -53,12 +55,12 @@
         </div>
 
         <div class="pure-control-group">
-            <label for="cycle">Cycle</label>
+            <label for="cycle">Activity Cycle</label>
             <select id="cycle" bind:value="cycle">
-                <option>diurnal</option>
-                <option>nocturnal</option>
-                <option>crepuscular</option>
-                <option>cathemeral</option>
+                <option value="diurnal">Run only in daylight (diurnal)</option>
+                <option value="nocturnal">Run only at night time (nocturnal)</option>
+                <option value="crepuscular">Run only at twilight (crepuscular)</option>
+                <option value="cathemeral">Run at all times (cathemeral)</option>
             </select>
         </div>
     </fieldset>
