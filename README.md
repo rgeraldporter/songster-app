@@ -1,13 +1,13 @@
 # songster-app
-### v0.1.0
+### v0.2.0
 
-Work in progress. Config app for songster.
+Work in progress. Configuration app for [songster](https://github.com/rgeraldporter/songster).
 
-##License
+## License
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Robert Gerald Porter
+Copyright (c) 2017-2018 Robert Gerald Porter
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
