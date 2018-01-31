@@ -1,7 +1,7 @@
 
 const get = () => new Promise((resolve, reject) => {
     const req = new XMLHttpRequest();
-    req.open('GET', 'http://localhost:8813/config', true);
+    req.open('GET', 'http://raspberrypi.local:8813/config', true);
     req.onload = function () {
         this.status >= 200 && this.status < 300
             ? resolve(req.response)
@@ -13,7 +13,7 @@ const get = () => new Promise((resolve, reject) => {
 
 const put = config => new Promise((resolve, reject) => {
     const req = new XMLHttpRequest();
-    req.open('PUT', 'http://localhost:8813/config');
+    req.open('PUT', 'http://raspberrypi.local:8813/config');
     req.setRequestHeader('Content-Type', 'application/json');
     req.onload = function () {
         this.status >= 200 && this.status < 300
