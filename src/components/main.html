@@ -19,16 +19,28 @@
     </fieldset>
     
     <fieldset>
+
         <legend>Song settings</legend>
+
+        <!--div class="pure-control-group">
+            <label for="volume">Volume</label>
+            <input bind:value='volume' type='range' min='0' max='10'>
+        </div-->
+
         <div class="pure-control-group">
             <label for="interval">Song interval</label>
-            <input id="interval" type="number" defaultValue="0.2" min="0.2" max="100" bind:value="interval">
+            <input bind:value="interval" type='range' defaultValue="0.2" min="0.2" max="100" id="interval">
+            <input id="interval" type="number" defaultValue="0.2" min="0.2" max="100.2" bind:value="interval">
             <span class="pure-form-message-inline">Minutes between each song</span>
         </div>
 
         <div class="pure-control-group">
-            <label for="interval">Folder name</label>
-            <input id="interval" type="text" defaultValue="5" min="0" max="100" bind:value="folder">
+            <label for="directory">Folder name</label>
+            <select id="directory" bind:value="directory">
+                {{#each folderNameOptions as folderName}}
+                    <option value="{{folderName}}">{{folderName}}</option>
+                {{/each}}
+            </select>
             <span class="pure-form-message-inline">Folder to play MP3s from</span>
         </div>
 

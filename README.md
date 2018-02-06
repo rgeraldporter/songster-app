@@ -1,5 +1,5 @@
 # songster-app
-### v0.2.0
+### v0.3.0
 
 Work in progress. Configuration app for [songster](https://github.com/rgeraldporter/songster).
 

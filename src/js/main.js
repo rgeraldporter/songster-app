@@ -6,12 +6,14 @@ const component = new Main({
   data: {
     title: "Songster config",
     interval: 0.2,
-    folder: "songs/eame/",
+    directory: "EAME",
     sort: "random",
     latitude: 44.123,
     longitude: -120.555,
     cycle: "diurnal",
-    pause: false
+    pause: false,
+    volume: 4,
+    folderNameOptions: ['EAME', 'BOBO']
   }
 });
 
@@ -25,6 +27,7 @@ http
   .then(() => component.observe('sort', sort => http.put({sort})))
   .then(() => component.observe('latitude', latitude => http.put({latitude})))
   .then(() => component.observe('longitude', longitude => http.put({longitude})))
+  .then(() => component.observe('directory', directory => http.put({directory})))
   .catch(console.error);
 
 function wait(time) {
